@@ -1,0 +1,525 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2988b5 0%, #1b5875 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.tab-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.tab-nav {
+  display: flex;
+  background: #dedede;
+  border-bottom: 1px solid #aaaaaa;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 15px 20px;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  color: #555555;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.tab-button:hover:not(:disabled) {
+  color: #555555;
+  background: #aaaaaa;
+}
+
+.tab-button.active {
+  color: #2988b5;
+  background: white;
+}
+
+.tab-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(135deg, #2988b5 0%, #1b5875 100%);
+}
+
+.tab-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tab-content {
+  min-height: 400px;
+}
+
+.tab-panel {
+  padding: 40px;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-container h2 {
+  color: #555555;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.subtitle {
+  color: #aaaaaa;
+  margin-bottom: 30px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  color: #555555;
+  font-weight: 500;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.form-input {
+  padding: 12px 15px;
+  border: 2px solid #dedede;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: #dedede;
+  color: #555555;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #2988b5;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(41, 136, 181, 0.1);
+}
+
+.form-input::placeholder {
+  color: #aaaaaa;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.submit-button {
+  padding: 15px;
+  background: linear-gradient(135deg, #2988b5 0%, #1b5875 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(41, 136, 181, 0.3);
+}
+
+.submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.alert {
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.alert-error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c2c7;
+}
+
+.alert-success {
+  background: #d1edff;
+  color: #0c5460;
+  border: 1px solid #b8daff;
+}
+
+.thankyou-container {
+  text-align: center;
+}
+
+.success-icon {
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.thankyou-container h2 {
+  color: #28a745;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.thankyou-message {
+  font-size: 1.1rem;
+  color: #555555;
+  margin-bottom: 30px;
+}
+
+.registration-details {
+  margin: 30px 0;
+}
+
+.detail-card {
+  background: #dedede;
+  border-radius: 10px;
+  padding: 25px;
+  text-align: left;
+}
+
+.detail-card h3 {
+  color: #555555;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #aaaaaa;
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.label {
+  font-weight: 500;
+  color: #aaaaaa;
+}
+
+.value {
+  font-weight: 600;
+  color: #555555;
+}
+
+.email-notice {
+  background: #e3f2fd;
+  color: #1565c0;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.primary-button,
+.secondary-button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-button {
+  background: linear-gradient(135deg, #2988b5 0%, #1b5875 100%);
+  color: white;
+}
+
+.secondary-button {
+  background: #aaaaaa;
+  color: white;
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile First Responsive Design */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 10px;
+    min-height: 100vh;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .tab-container {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 10px;
+  }
+
+  .tab-button {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  .tab-panel {
+    padding: 20px 15px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .form-input {
+    padding: 14px 15px;
+    font-size: 16px;
+    /* Prevent zoom on iOS */
+  }
+
+  .submit-button {
+    padding: 16px 15px;
+    font-size: 16px;
+    margin-top: 15px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .primary-button,
+  .secondary-button {
+    padding: 14px 20px;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .detail-card {
+    padding: 20px 15px;
+  }
+
+  .detail-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    padding: 15px 0;
+  }
+
+  .thankyou-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .thankyou-message {
+    font-size: 1rem;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .app-container {
+    padding: 5px;
+  }
+
+  .header {
+    margin-bottom: 20px;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .tab-container {
+    border-radius: 8px;
+  }
+
+  .tab-button {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+
+  .tab-panel {
+    padding: 15px 10px;
+  }
+
+  .form-container h2 {
+    font-size: 1.3rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .form-input {
+    padding: 12px;
+  }
+
+  .submit-button {
+    padding: 14px;
+  }
+
+  .detail-card {
+    padding: 15px 10px;
+  }
+
+  .email-notice {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .alert {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+}
+
+/* Tablet and Medium Screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .tab-container {
+    max-width: 600px;
+  }
+
+  .tab-panel {
+    padding: 35px;
+  }
+}
+
+/* Touch-friendly interactions */
+@media (hover: none) and (pointer: coarse) {
+  .tab-button:hover:not(:disabled) {
+    background: transparent;
+    color: #555555;
+  }
+
+  .tab-button:active:not(:disabled) {
+    background: #aaaaaa;
+    color: #555555;
+  }
+
+  .submit-button:hover:not(:disabled) {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .submit-button:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+
+  .primary-button:hover,
+  .secondary-button:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .primary-button:active,
+  .secondary-button:active {
+    transform: scale(0.98);
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .tab-button.active::after {
+    height: 2px;
+  }
+}

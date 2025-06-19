@@ -1,0 +1,45 @@
+<div class="tab-panel">
+  <div class="thankyou-container">
+    <div class="success-icon">
+      <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="20,6 9,17 4,12"></polyline>
+      </svg>
+    </div>
+
+    <h2>Registration Successful!</h2>
+    <p class="thankyou-message">
+      Thank you for registering, <strong>{{ registeredUser?.firstName }}</strong>!
+    </p>
+
+    <div class="registration-details">
+      <div class="detail-card">
+        <h3>Your Registration Details</h3>
+        <div class="detail-item">
+          <span class="label">Registration ID:</span>
+          <span class="value">{{ registeredUser?.registrationId }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Name:</span>
+          <span class="value">{{ registeredUser?.firstName }} {{ registeredUser?.lastName }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Email:</span>
+          <span class="value">{{ registeredUser?.email }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="email-notice">
+      <p>📧 A confirmation email has been sent to your email address.</p>
+    </div>
+
+    <div class="action-buttons">
+      <button class="secondary-button" (click)="startOver()">
+        Register Another User
+      </button>
+      <button class="primary-button" (click)="goToLogin()">
+        Go to Login
+      </button>
+    </div>
+  </div>
+</div>

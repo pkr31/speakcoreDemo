@@ -1,0 +1,30 @@
+<div class="app-container">
+  <div class="header">
+    <h1>Registration Portal</h1>
+    <p>Welcome to our secure registration system</p>
+  </div>
+
+  <div class="tab-container">
+    <div class="tab-nav">
+      <button class="tab-button"
+              [class.active]="isActiveRoute('/login')"
+              (click)="navigateTo('/login')">
+        Login
+      </button>
+      <button class="tab-button"
+              [class.active]="isActiveRoute('/register')"
+              (click)="navigateTo('/register')">
+        Register
+      </button>
+      <button class="tab-button"
+              [class.active]="isActiveRoute('/thank-you')"
+              [disabled]="!isActiveRoute('/thank-you')">
+        Thank You
+      </button>
+    </div>
+
+    <div class="tab-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
